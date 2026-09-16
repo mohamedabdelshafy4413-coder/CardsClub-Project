@@ -1,0 +1,26 @@
+ID,Risk,Severity,Impact,Mitigation,Owner,Deadline / Gate
+R01,Master data inconsistency,Critical,Origin/specification conflicts can stop buyer approval or customs clearance,Create one controlled Export Master Data file; one owner; version control; no ad-hoc specs,COO/Operations,0-15
+R02,Wrong country of origin listing,Critical,Can invalidate preferential duty or undermine supplier trust,"Correct all public listings; reconcile factory, COO and product labels before outreach",Export Manager,0-10
+R03,HS classification error,High,"Wrong duty, conformity route or customs dispute",Validate HS 950440 with customs broker/importer before first shipment per destination,Export/Customs,0-20
+R04,Rules of Origin failure,Critical,Preferential tariff may be denied,Build BOM + Egyptian value-added calculation per SKU; retain supplier evidence,Finance/Export,0-20
+R05,Missing/incorrect COO,Critical,Shipment delay or loss of preference,GOEIC SOP + pre-shipment document checklist + archive records,Export Docs,0-25
+R06,Saudi conformity/Saber mismatch,High,Shipment can be delayed/re-exported,Importer confirms Saber path and certificates before final PO/shipping,Saudi Importer,Before PO
+R07,Kenya standards/import inspection issue,High,Goods may be rejected or returned,Buyer confirms applicable KEBS standard and inspection route before shipment,Kenya Importer,Before PO
+R08,Unpaid distributor,Critical,Cash loss and working-capital stress,First orders: advance or irrevocable/confirmed L/C; credit only after clean history,Finance,All first orders
+R09,Weak exclusive distributor,High,Market gets blocked by a low-performing partner,"Performance-based exclusivity: minimum annual purchase, doors, forecast, payment KPIs",BD/Legal,Contract stage
+R10,MOQ too high for first order,High,Good buyers refuse to test,Create Trial MOQ / Standard MOQ / Strategic MOQ ladder,Commercial,0-20
+R11,Production delay,High,Missed seasonal windows and buyer trust loss,Capacity reservation + realistic lead-time SLA + order milestone tracking,Operations,0-30
+R12,Quality variation vs sample,High,"Returns, claims, reputation damage",Golden Sample; fixed paper/coating/cut tolerances; batch QC sign-off,QC,0-30
+R13,Humidity / warping,High,Paper cards deform in tropical routes,"Shrink/moisture barrier, desiccant where needed, dry-container check, pallet wrap",Logistics/QC,Before shipment
+R14,Freight-rate volatility,Medium,CIF margin collapses,7-14 day quote validity; multi-forwarder quotes; separate freight line,Commercial/Logistics,Every quote
+R15,FX volatility,Medium,Margin erosion,Quote in USD; FX buffer; short validity; reprice long lead orders,Finance,Every quote
+R16,Trademark/copyright infringement,High,"Legal claims, seizure, reputational risk",Customer IP warranty + rights evidence + trademark screen for country editions,Legal/Design,Artwork approval
+R17,Cultural/religious sensitivity,High,"Rejection, backlash, buyer cancellation",Local artwork review; avoid sensitive national/religious/royal symbols without approval,Marketing/Legal,Design stage
+R18,Gambling perception,Medium,Corporate/hospitality buyers may avoid product,"Lead with family games, collectibles, tourism, gifting and branded merchandise",Marketing,Always
+R19,Channel conflict,High,Distributor/retailer price war,"Define territory, channels, MAP guidance where lawful, and account ownership",Commercial/Legal,Contract stage
+R20,Inventory overbuild,High,Cash trapped in unsold SKUs,Pilot → reorder model; use custom pre-orders; forecast by country,Planning,Ongoing
+R21,Cold-email deliverability,High,Domain reputation damaged; campaign stalls,"Use segmented micro-campaigns, verified contacts, low mailbox volume, custom domain",Growth,Before outreach
+R22,Poor lead quality,High,Replies low despite volume,ICP scoring; 1-2 decision makers/company; buyer intent signals; segment-specific offer,Growth/BD,Ongoing
+R23,Data leakage / credential exposure,Critical,Account compromise and financial loss,Keep credentials and banking data out of commercial workbooks; rotate exposed passwords,IT/Management,Immediate
+R24,Custom design scope creep,Medium,Margin loss and late delivery,"Define included revisions, artwork approval gate, change-order fees",Design/Commercial,Quote stage
+R25,Seasonality miss,High,Ramadan/holiday deck arrives after demand peak,Backward-plan artwork/production/freight with hard cutoff dates,Planning,Seasonal calendar
