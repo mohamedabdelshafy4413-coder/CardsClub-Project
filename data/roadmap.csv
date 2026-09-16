@@ -1,0 +1,14 @@
+Phase,Timing,Workstream,Actions,Deliverable,Success Metric
+1,Days 1-5,Data & security cleanup,Remove credentials from working exports; rotate exposed passwords; assign master-data owner,Clean commercial dataset; access controls,0 sensitive credentials in commercial files
+2,Days 1-10,Export master data,"Validate SKU names, barcodes, dimensions, carton pack, weights, origin, lead time",Export Master Data v1.0,100% active SKUs verified
+3,Days 6-15,Compliance foundation,HS validation; origin/BOM audit; document SOP; priority-market customs checks,Compliance pack,6 Tier-A routes pre-checked
+4,Days 10-20,Commercial architecture,EXW/FOB/CIF waterfall; Trial/Standard/Strategic MOQ; BrandLab quote tiers,Price & MOQ matrix,Approved pricing governance
+5,Days 15-25,Sales assets,Distributor line sheet; BrandLab deck; tourism deck; sample policy; RFQ form,Export sales kit,All assets ready EN; key pages AR/FR
+6,Days 20-30,Golden 1000 build,Build company universe and score accounts by segment/country,"1,000 target accounts",95%+ valid companies; 1-2 buyers/account
+7,Days 31-38,Wave 1 pilot,"UAE, Saudi, South Africa, Kuwait, Morocco, Qatar micro-campaigns",250-300 targeted accounts live,Bounce <2%; reply baseline established
+8,Days 39-45,Objection mining,"Tag objections: price, MOQ, China incumbent, samples, exclusivity, private label",Objection library,Top 10 objections + scripts
+9,Days 46-55,Offer optimization,"Revise messaging, samples, MOQ and country-specific value props",V2 offers,Improved positive-reply rate
+10,Days 56-65,Wave 2 launch,"Oman, Kenya, Tanzania, Uganda, Algeria, Bahrain, Mauritius, Ghana",300-350 accounts live,Qualified conversations in 4+ new markets
+11,Days 61-75,RFQ & samples,"FOB/CIF quotes, sample dispatch, distributor due diligence",Active RFQ pipeline,6-15 qualified buyers
+12,Days 70-85,Commercial closing,"Negotiate payment, territory, annual commitment, compliance and production slots",Pilot contracts / POs,2-6 pilot PO target scenario
+13,Days 80-90,Proof & scale,Create first export case studies; reorder plan; Wave 3 selection,Export proof pack + Q2 pipeline,2+ usable export proof cases
