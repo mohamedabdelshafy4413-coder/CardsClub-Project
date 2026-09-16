@@ -11,10 +11,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+
+      - name: Install runtime
+        run: pip install -r requirements.txt
+
       - name: Validate app syntax and runtime data
         run: |
           python -m py_compile app.py
@@ -23,7 +28,10 @@ jobs:
           from pathlib import Path
 
           required = {
-              'data/countries.csv': {'Rank','Tier','Country','Score /100'},
+              'data/countries.csv': {
+                  'Rank','Tier','Country','Score /100','Execution Readiness /15',
+                  'Outreach Priority','Data Confidence','Recommended Wave'
+              },
               'data/products.csv': {'Product / Line','Architecture','Strategic Role'},
               'data/risks.csv': {'ID','Risk','Severity','Mitigation'},
               'data/roadmap.csv': {'Phase','Timing','Workstream','Success Metric'},
@@ -31,6 +39,7 @@ jobs:
               'data/trade.csv': {'Framework','Markets','Execution Rule'},
               'data/sources.csv': {'Source','Use','URL / File'},
           }
+
           for name, cols in required.items():
               p = Path(name)
               assert p.exists(), f'Missing {name}'
@@ -38,5 +47,24 @@ jobs:
                   rows = list(csv.DictReader(f))
               assert rows, f'{name} is empty'
               assert cols.issubset(rows[0].keys()), f'{name} missing columns: {cols - set(rows[0].keys())}'
-          print('Cards Club dashboard smoke test passed.')
+
+          with Path('data/countries.csv').open(encoding='utf-8-sig', newline='') as f:
+              countries = list(csv.DictReader(f))
+          assert len(countries) == 50, f'Expected 50 countries, found {len(countries)}'
+          ranks = sorted(int(float(r['Rank'])) for r in countries)
+          assert ranks == list(range(1, 51)), 'Country ranks must be 1..50 with no gaps'
+          for r in countries:
+              score = float(r['Score /100'])
+              assert 0 <= score <= 100, f"Bad score for {r['Country']}: {score}"
+              assert r['Data Confidence'] in {'High','Medium','Low'}, f"Bad confidence flag: {r}"
+              assert r['Recommended Wave'] in {'Wave 1','Wave 2','Discovery'}, f"Bad wave: {r}"
+
+          for p in [
+              Path('study/MASTER_EXPORT_STUDY.md'),
+              Path('study/EXPORT_READINESS_CHECKLIST.md'),
+              Path('study/OUTBOUND_EMAIL_PLAYBOOK.md'),
+          ]:
+              assert p.exists() and p.stat().st_size > 500, f'Missing/empty study file: {p}'
+
+          print('Cards Club dashboard + study validation passed.')
           PY
