@@ -2,9 +2,14 @@ Source,Use,URL / File
 Cards Club Company Profile (uploaded),Brand story; mission; vision; product positioning,Uploaded PDF: CP Cards Club 14-07-2026(1).pdf
 Cards Club internal data (uploaded),Working prices; SKU families; MOQ/lead-time fields; contains data-quality issues,Uploaded XLSX: Local & global data .xlsx
 Cards Club official website,"50,000+ decks sold; 25+ unique designs; Create Your Own Deck workflow",https://www.cardsclubegypt.com/
-Egypt Export Portal - Cards Club,Shows company export profile and that prior export is marked No,https://www.expoegypt.gov.eg/co/cards-club
+Egypt Export Portal - Cards Club,Company/export profile reference; public listings must be checked for origin/spec consistency,https://www.expoegypt.gov.eg/co/cards-club
 WITS HS950440 2024,Country import values for playing cards,https://wits.worldbank.org/trade/comtrade/en/country/All/year/2024/tradeflow/Imports/partner/WLD/product/950440
 WITS / 2023 fallback,Fallback country import values where 2024 total not available,https://wits.worldbank.org/trade/comtrade/en/country/All/year/2023/tradeflow/Imports/partner/WLD/product/950440
+WITS UAE Imports 2023,"UAE import signal: approx. USD 12.259M",https://wits.worldbank.org/trade/comtrade/en/country/ARE/year/2023/tradeflow/Imports/partner/ALL/product/950440
+WITS UAE Exports 2023,"UAE export/re-export trading-node signal: approx. USD 5.629M",https://wits.worldbank.org/trade/comtrade/en/country/ARE/year/2023/tradeflow/Exports/partner/ALL/product/950440
+WITS Saudi Imports 2024,"Saudi import signal: approx. USD 7.097M; includes Egypt import-side trade flow",https://wits.worldbank.org/trade/comtrade/en/country/SAU/year/2024/tradeflow/Imports/partner/ALL/product/950440
+WITS Egypt-origin Import Mirror 2024,"Importer-side evidence of Egypt-origin playing-card flows; mirror data may differ from exporter-side records",https://wits.worldbank.org/trade/comtrade/en/country/All/year/2024/tradeflow/Imports/partner/EGY/product/950440
+WITS South Africa Imports 2024,"South Africa import signal: approx. USD 6.395M",https://wits.worldbank.org/trade/comtrade/en/country/ZAF/year/2024/tradeflow/Imports/partner/ALL/product/950440
 IDA International Agreements,"GAFTA; COMESA; Agadir; AfCFTA facts",https://www.ida.gov.eg/en/international-agreements
 GOEIC Origin,Certificate of origin framework,https://www.goeic.gov.eg/ar/services-and-activities/Exports-and-origin
 Saber,Saudi product/conformity/shipment workflow,https://saber.sa/Home/Index?culture=en-US
