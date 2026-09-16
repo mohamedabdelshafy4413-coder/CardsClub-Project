@@ -1,11 +1,23 @@
-# Cards Club — International Export Growth Master Study
+# Cards Club — International Export Growth Master Study v2
 
 **Scope:** GCC + Africa  
 **Research snapshot:** September 2026  
 **Core customs family:** HS 950440 — Playing Cards  
 **Operating horizon:** 90-day market-entry sprint + repeatable export system
 
-> This document separates source-backed facts from strategic recommendations. Tariffs, conformity, Rules of Origin, freight and buyer information must be re-validated before live quotations or shipments.
+> This document separates source-backed facts, internal planning assumptions and strategic recommendations. Tariffs, conformity, Rules of Origin, freight, payment terms and buyer information must be re-validated before a live quotation or shipment.
+
+---
+
+## 0) Corrections and methodology upgrades
+
+This version corrects and strengthens the earlier study in five important ways:
+
+1. The fifth market-scoring dimension is now named **Execution Readiness /15**, not “Risk quality.” A higher score means the market is easier to execute against under the current operating model; it is not a sovereign-risk score.
+2. Every country now carries a separate **Data Confidence** flag: High / Medium / Low.
+3. Every country now carries a **Recommended Wave**: Wave 1 / Wave 2 / Discovery. A high attractiveness score does not automatically mean immediate launch.
+4. UAE is supported as a GCC trading hub by both import and export data. South Africa is treated as a major African demand market and a potential distribution base, but regional hub economics must be validated with actual distributor reach and landed-cost evidence rather than assumed.
+5. Mirror trade statistics are explicitly treated as evidence signals rather than audited company sales or exact market share.
 
 ---
 
@@ -27,7 +39,9 @@ A standard deck is bought mainly on price, quality, MOQ and delivery. A customiz
 
 The uploaded company profile positions Cards Club around premium playing cards, durability, handling and refined visual identity, and describes themed/cultural collections plus commercial collaborations. It also frames the mission around custom/themed decks for seasonal events, tourism, culture and corporate brands, with an ambition to lead the playing-card industry and become a leading African manufacturer.
 
-The public website and source register should be treated as supporting commercial references. Internal pricing and operational data must be validated before they are sent to buyers.
+The public website and source register should be treated as supporting commercial references. Internal pricing, MOQ, factory-capacity and specification data must be validated before buyer-facing use.
+
+Commercial concepts shown in the company profile must not automatically be represented as verified client relationships unless there is separate evidence of an actual completed project.
 
 ---
 
@@ -63,57 +77,123 @@ Cards Club should avoid trying to become the cheapest supplier. The intended pos
 - smaller pilot runs and faster concept adaptation where operationally feasible
 - potential regional trade preferences, subject to product-specific Rules of Origin and destination acceptance
 
+### Competitive rule
+Do not sell “Made in Egypt” as a sufficient advantage by itself. The value proposition must combine **design flexibility + responsive production + localization + commercial reliability + buyer economics**.
+
 ---
 
-## 5) Market prioritization model
+## 5) Verified trade evidence that materially changes the strategy
+
+### UAE — documented GCC trading hub
+WITS / UN Comtrade reports UAE imports of HS 950440 at **$12.259M in 2023** and exports at **$5.629M in 2023**. UAE exports in that year included Saudi Arabia, Qatar, Oman, Kuwait and Bahrain. This is strong evidence that UAE is not only a demand market but also a regional trading node for the category.
+
+Sources:
+- https://wits.worldbank.org/trade/comtrade/en/country/ARE/year/2023/tradeflow/Imports/partner/ALL/product/950440
+- https://wits.worldbank.org/trade/comtrade/en/country/ARE/year/2023/tradeflow/Exports/partner/ALL/product/950440
+
+### Saudi Arabia — major demand + Egyptian origin signal
+WITS reports Saudi imports of HS 950440 at **$7.097M in 2024**. Saudi import-side data reports approximately **$208.8K** from Egypt in 2024.
+
+However, exporter-side mirror data for Egypt → Saudi records a different value. This discrepancy is normal enough in international trade statistics that the safe conclusion is:
+
+> Egyptian-origin playing cards have a documented trade-flow signal into Saudi Arabia, but the exact bilateral value should not be treated as audited market share.
+
+Sources:
+- https://wits.worldbank.org/trade/comtrade/en/country/SAU/year/2024/tradeflow/Imports/partner/ALL/product/950440
+- https://wits.worldbank.org/trade/comtrade/en/country/All/year/2024/tradeflow/Imports/partner/EGY/product/950440
+- https://wits.worldbank.org/trade/comtrade/en/country/All/year/2024/tradeflow/Exports/partner/SAU/product/950440
+
+### South Africa — large African demand market
+WITS reports South Africa imports of HS 950440 at approximately **$6.395M in 2024**. This supports South Africa as a large addressable African market. A wider Southern Africa hub strategy should be validated through distributor reach, channel economics and landed-cost testing rather than assumed from import volume alone.
+
+Source:
+- https://wits.worldbank.org/trade/comtrade/en/country/ZAF/year/2024/tradeflow/Imports/partner/ALL/product/950440
+
+---
+
+## 6) Market prioritization model
 
 The 50-country model uses five dimensions:
 
 1. **Demand signal /30** — latest available HS 950440 import value in the dataset.
 2. **Trade-access potential /20** — GAFTA / Agadir / COMESA / AfCFTA route potential, subject to verification.
 3. **Product-market fit /20** — corporate gifting, tourism, hospitality, retail and localization fit.
-4. **Logistics /15** — route practicality / hub value.
-5. **Risk quality /15** — payment, FX, operational and execution quality.
+4. **Logistics /15** — route practicality / trading-hub value.
+5. **Execution Readiness /15** — payment, FX, compliance, operational and go-to-market practicality under Cards Club’s current capabilities.
 
 The score is a decision-support heuristic, not a sovereign-risk rating and not a sales forecast.
 
-### Wave 1 — first 90-day pilot
+### Data Confidence
+
+**High** — recent import observation is available and the principal trade route is reasonably clear, though shipment-level customs still requires verification.  
+**Medium** — older trade year, mirror-data issue, or material route uncertainty.  
+**Low** — importer total or route is not sufficiently verified; use for research/discovery rather than committed budget.
+
+### Recommended rollout
+
+#### Wave 1 — first 90-day pilot
 - United Arab Emirates
 - Saudi Arabia
-- South Africa
 - Kuwait
 - Morocco
 - Qatar
+- South Africa
 
-### Wave 2 — after message/offer validation
+#### Wave 2 — after message/offer validation
 - Oman
 - Kenya
+- Bahrain
+- Mauritius
 - Tanzania
 - Uganda
 - Algeria
-- Bahrain
-- Mauritius
 - Ghana
+
+#### Discovery
+All remaining markets stay in the intelligence universe until the demand signal, data confidence, buyer universe and execution route justify a larger allocation.
 
 ### Operating rule
 The 50 countries are the **Market Intelligence Universe**. They are not a recommendation to spend equally across 50 markets simultaneously.
 
 ---
 
-## 6) Hub strategy
+## 7) Market-specific strategic logic
 
-### UAE — GCC commercial hub
-Use UAE for three parallel opportunities:
-- direct premium/custom sales
-- hospitality/tourism accounts
-- regional distributor / re-export conversations
+### UAE
+**Primary role:** direct premium market + GCC trading node.  
+**Best lines:** BrandLab, destination/tourism, premium Core.  
+**Buyer types:** importers, promotional agencies, hotel suppliers, tourism merchandise, marketplace operators.  
+**Key proof:** imports + exports show a meaningful category trading ecosystem.
 
-### South Africa — Southern Africa hub
-Use South Africa as a regional distribution conversation for neighboring Southern African markets only when partner economics, landed pricing and channel rights make sense.
+### Saudi Arabia
+**Primary role:** high-demand GCC market with direct Egyptian-origin signal.  
+**Best lines:** Core, BrandLab, Ramadan/seasonal.  
+**Buyer types:** distributors, gifting agencies, retail, hospitality, direct brands.  
+**Control gate:** importer must confirm Saber/conformity path before shipment.
+
+### Kuwait
+**Primary role:** premium niche with meaningful import signal.  
+**Best lines:** BrandLab, premium Core, gifting.  
+**Commercial focus:** higher-margin, lower-complexity accounts before volume chase.
+
+### Morocco
+**Primary role:** tourism + retail + potential preferential regional trade route.  
+**Best lines:** tourism, heritage, Core.  
+**Control gate:** verify Agadir/origin eligibility for the actual SKU/BOM.
+
+### Qatar
+**Primary role:** luxury corporate/hospitality niche.  
+**Best lines:** BrandLab, hospitality, premium gifting.  
+**Commercial focus:** fewer high-value accounts rather than broad commodity outreach.
+
+### South Africa
+**Primary role:** large African category demand.  
+**Best lines:** Core, retail, private label.  
+**Important correction:** treat regional hub expansion as a partner hypothesis to be tested, not as an automatic re-export assumption.
 
 ---
 
-## 7) Market-entry channels
+## 8) Market-entry channels
 
 1. Playing-card / toy / game importers and distributors
 2. Corporate gifting and promotional merchandise agencies
@@ -125,7 +205,7 @@ Use South Africa as a regional distribution conversation for neighboring Souther
 
 ---
 
-## 8) Golden 1000 account model
+## 9) Golden 1000 account model
 
 | Segment | Target accounts |
 |---|---:|
@@ -147,12 +227,24 @@ Use South Africa as a regional distribution conversation for neighboring Souther
 - Business Development Director
 - Guest Experience / Hotel Marketing
 
+### Lead-scoring model
+Each account should be scored on:
+- category relevance
+- current import/distribution role
+- number of retail/hospitality doors
+- geographic coverage
+- evidence of promotional/private-label buying
+- decision-maker accessibility
+- website/email quality
+- payment/credit profile where available
+- product fit by Cards Club line
+
 ### Outbound rule
 Do not send one generic 1,000-contact blast. Split the database by **country × segment × offer × decision maker** and optimize reply, positive reply, RFQ, sample and PO rates.
 
 ---
 
-## 9) Commercial architecture
+## 10) Commercial architecture
 
 ### MOQ ladder
 - **Trial MOQ** — lowers the first-order barrier.
@@ -165,11 +257,31 @@ EXW → FOB → CIF, with freight shown separately and short quote-validity wind
 ### BrandLab pricing logic
 **Design/setup + manufacturing + packaging upgrades + freight** with quantity tiers such as 500 / 1,000 / 2,500 / 5,000 / 10,000 / 25,000+ where factory economics support them.
 
-Working internal prices shown in the dashboard are not buyer-ready until validated.
+### Landed-cost decision model
+The dashboard now includes a scenario calculator using:
+
+**Goods value + freight + insurance + customs duty + import tax/VAT + destination fixed fees = estimated landed cost**
+
+Then:
+
+**Landed cost → distributor gross margin → retailer gross margin → indicative retail target**
+
+This is an internal planning tool only. VAT/tax recoverability, customs basis and destination fees vary by jurisdiction and must be verified.
+
+### Pricing control
+Working internal prices are not buyer-ready until Cards Club approves:
+- COGS
+- pack configuration
+- Incoterm
+- MOQ
+- payment term
+- freight validity
+- design/setup scope
+- target gross margin
 
 ---
 
-## 10) Customs and origin strategy
+## 11) Customs and origin strategy
 
 Potential routes in the study include **GAFTA, COMESA, Agadir and AfCFTA**. These are opportunities, not blanket duty-free guarantees.
 
@@ -186,9 +298,31 @@ Every live shipment requires a product/destination gate:
 **Safe commercial wording:**
 > Preferential origin may reduce or eliminate customs duty subject to HS classification, applicable agreement, Rules of Origin, valid Certificate of Origin and destination-customs acceptance.
 
+### Mirror-data control
+Importer-side and exporter-side trade statistics can differ. Do not use either as audited Cards Club revenue, exact bilateral market share or proof of a specific customer transaction.
+
 ---
 
-## 11) Export risk system
+## 12) Export readiness control room
+
+The dashboard now converts readiness into five operating blocks:
+
+1. Product master data
+2. Customs & origin
+3. Commercial architecture
+4. Quality & shipment
+5. Sales operations
+
+### Hard stop logic
+- Below 60% internal completion: do not scale outbound.
+- 60–84%: pilot outreach can run, but shipment commitments remain gated.
+- 85%+: controlled scale is operationally reasonable, still subject to country-specific compliance and buyer due diligence.
+
+This percentage is a management indicator, not a certification.
+
+---
+
+## 13) Export risk system
 
 The full 25-risk register is in `data/risks.csv`. The highest-priority controls are:
 
@@ -205,9 +339,16 @@ The full 25-risk register is in `data/risks.csv`. The highest-priority controls 
 - **Cold-email deliverability:** verified contacts, small segmented batches, low mailbox volume.
 - **Data security:** credentials and banking data never belong in the public repository or commercial lead files.
 
+### Risk ownership rule
+Every Critical or High risk must have:
+- an accountable owner
+- a deadline/gate
+- documentary proof of mitigation
+- escalation path if unresolved
+
 ---
 
-## 12) 90-day GTM
+## 14) 90-day GTM
 
 ### Days 1–15 — Export readiness
 - sanitize commercial data
@@ -228,7 +369,7 @@ The full 25-risk register is in `data/risks.csv`. The highest-priority controls 
 - Golden 1000 build
 
 ### Days 31–45 — Wave 1 pilot
-Launch segmented micro-campaigns in UAE, Saudi Arabia, South Africa, Kuwait, Morocco and Qatar.
+Launch segmented micro-campaigns in UAE, Saudi Arabia, Kuwait, Morocco, Qatar and South Africa.
 
 Primary learning goal: determine which **market × segment × offer × message** combinations produce qualified responses.
 
@@ -236,14 +377,14 @@ Primary learning goal: determine which **market × segment × offer × message**
 Build the objection library and improve pricing, MOQ, samples and positioning.
 
 ### Days 56–75 — Wave 2 + RFQ / samples
-Expand to Oman, Kenya, Tanzania, Uganda, Algeria, Bahrain, Mauritius and Ghana while converting Wave 1 interest into RFQs and samples.
+Expand to Oman, Kenya, Bahrain, Mauritius, Tanzania, Uganda, Algeria and Ghana while converting Wave 1 interest into RFQs and samples.
 
 ### Days 70–90 — Commercial closing
 Negotiate payment, territory, annual commitments, compliance and production slots; close pilot POs and create export proof cases.
 
 ---
 
-## 13) Operating scenarios
+## 15) Operating scenarios
 
 These are planning scenarios, not guaranteed forecasts.
 
@@ -260,11 +401,11 @@ The first 72-hour objective is **interest, catalog/RFQ/sample intent**, not an a
 
 ---
 
-## 14) End-state business model
+## 16) End-state business model
 
 The strategic goal is not only to export the current Cards Club range. It is to make Cards Club the regional production platform for any distributor, destination or brand that wants its own deck.
 
 **End state:**
 > **Design-to-Deck Manufacturing Platform for MENA & Africa**
 
-This is the core logic behind BrandLab, Destination editions, distributor partnerships, regional hubs and the 90-day proof-building system.
+This is the core logic behind BrandLab, Destination editions, distributor partnerships, GCC hub strategy, market-confidence controls and the 90-day proof-building system.
