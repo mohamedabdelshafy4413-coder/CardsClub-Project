@@ -1,0 +1,12 @@
+Product / Line,Architecture,Primary Buyer,Working Price,Currency,Source Status,Evidence / Scope,Strategic Role
+Bridge Single,Core,Volume / Distributor,2.35,USD,Working internal export price,Standard Bridge; multiple colors/SKUs,Use as distributor door-opener; avoid pure price war
+Bridge 4,Core,Volume / Retail,7.75,USD,Working internal export price,4-pack format,Bundle for retail and gifting
+Bridge 20,Core,Wholesale,34.00,USD,Working internal export price,20-pack format,Wholesale / distributor case-building
+Pharaonic - Tutankhamun,Heritage,Tourism / Souvenir,,USD,Price not supported by uploaded source,Heritage SKU exists in internal data,Premium Egyptian heritage story
+Pharaonic - Nefertiti,Heritage,Tourism / Souvenir,,USD,Price not supported by uploaded source,Heritage SKU exists in internal data,Premium Egyptian heritage story
+Pharaonic - Cleopatra,Heritage,Tourism / Souvenir,,USD,Price not supported by uploaded source,Heritage SKU exists in internal data,Premium Egyptian heritage story
+Pharaonic - Sphinx,Heritage,Tourism / Souvenir,,USD,Price not supported by uploaded source,Heritage SKU exists in internal data,Premium Egyptian heritage story
+Camel Editions,Destinations,Tourism / Souvenir,,USD,Price not supported by uploaded source,Touristic SKU family exists,Localize by destination/country
+Fish / Red Sea Editions,Destinations,Tourism / Souvenir,,USD,Price not supported by uploaded source,Touristic SKU family exists,Localize by coast/resort/dive destination
+Seasonal Editions,Seasons,Gifting / Limited,,USD,Price not supported by uploaded source,Ramadan/Christmas/Easter/Halloween lines shown publicly,Seasonal urgency + gifting
+Custom / Private Label,BrandLab,B2B / High Margin,,USD,Requires quote matrix,Website supports create-your-own-deck workflow,Highest strategic priority
