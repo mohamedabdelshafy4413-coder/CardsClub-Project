@@ -1,0 +1,42 @@
+name: Cards Club Smoke Test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  smoke-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate app syntax and runtime data
+        run: |
+          python -m py_compile app.py
+          python - <<'PY'
+          import csv
+          from pathlib import Path
+
+          required = {
+              'data/countries.csv': {'Rank','Tier','Country','Score /100'},
+              'data/products.csv': {'Product / Line','Architecture','Strategic Role'},
+              'data/risks.csv': {'ID','Risk','Severity','Mitigation'},
+              'data/roadmap.csv': {'Phase','Timing','Workstream','Success Metric'},
+              'data/golden1000.csv': {'Segment','Target Accounts','Decision Makers'},
+              'data/trade.csv': {'Framework','Markets','Execution Rule'},
+              'data/sources.csv': {'Source','Use','URL / File'},
+          }
+          for name, cols in required.items():
+              p = Path(name)
+              assert p.exists(), f'Missing {name}'
+              with p.open(encoding='utf-8-sig', newline='') as f:
+                  rows = list(csv.DictReader(f))
+              assert rows, f'{name} is empty'
+              assert cols.issubset(rows[0].keys()), f'{name} missing columns: {cols - set(rows[0].keys())}'
+          print('Cards Club dashboard smoke test passed.')
+          PY
