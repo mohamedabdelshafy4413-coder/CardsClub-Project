@@ -1,51 +1,51 @@
-Rank,Tier,Country,Region,HS950440 Import USD,Data Year,Data Status,Potential Trade Route,Demand /30,Trade /20,Fit /20,Logistics /15,Risk /15,Score /100,Product Focus,Country Positioning,3-Day Reply Potential
-1,A,United Arab Emirates,GCC,12259189.0,2023.0,Reported imports,GAFTA - verify RoO/COO,30,19,20,15,14,98,BrandLab / Tourism / Premium Core,GCC distribution hub + custom branded decks,Very High
-2,A,Saudi Arabia,GCC,7097270.0,2024.0,Reported imports,GAFTA - verify RoO/COO,30,19,19,14,14,96,Core / BrandLab / Ramadan,Arabic premium + corporate gifting + distributor volume,Very High
-3,A,Kuwait,GCC,2707530.0,2024.0,Reported imports,GAFTA - verify RoO/COO,27,19,18,12,14,90,BrandLab / Premium Core,Premium gifting + specialty retail,Very High
-4,A,Morocco,Africa,1260320.0,2024.0,Reported imports,Agadir / GAFTA - verify origin route,24,20,19,13,12,88,Tourism / Heritage / Core,Tourism + heritage + hotel/souvenir channels,High
-5,A,Qatar,GCC,1117380.0,2024.0,Reported imports,GAFTA - verify RoO/COO,24,19,19,11,15,88,BrandLab / Hospitality,Luxury corporate + hospitality,High
-6,A,South Africa,Africa,6395350.0,2024.0,Reported imports,AfCFTA - verify tariff schedule,30,10,19,15,12,86,Core / Private Label,Retail volume + Southern Africa hub,Very High
-7,A,Oman,GCC,621420.0,2024.0,Reported imports,GAFTA - verify RoO/COO,21,19,18,12,14,84,Tourism / Premium Core,Tourism + premium standard + gifting,High
-8,A,Kenya,Africa,542040.0,2024.0,Reported imports,COMESA / AfCFTA GTI - verify applicable route,21,17,18,14,10,80,Core / Tourism / Private Label,East Africa hub + wildlife/destination editions,High
-9,A,Bahrain,GCC,340850.0,2024.0,Reported imports,GAFTA - verify RoO/COO,18,19,18,10,14,79,Premium Core / BrandLab,Premium niche + hospitality,High
-10,A,Mauritius,Africa,239890.0,2024.0,Reported imports,COMESA / AfCFTA GTI - verify applicable route,18,17,20,10,12,77,Tourism / BrandLab,Resorts + tourism decks + premium gifts,High
-11,A,Tanzania,Africa,853980.0,2024.0,Reported imports,AfCFTA GTI - verify tariff schedule,21,14,17,11,9,72,Tourism / Core,Zanzibar tourism + wholesale distribution,High
-12,A,Uganda,Africa,989300.0,2024.0,Reported imports,COMESA - verify current preference,21,17,14,9,8,69,Core,Distributor-volume Bridge,High
-13,B,Algeria,Africa,532770.0,2024.0,Reported imports,AfCFTA GTI - verify tariff schedule,21,14,15,10,9,69,Core / Heritage,Arabic/French localization + distributor,High
-14,B,Ghana,Africa,231910.0,2024.0,Reported imports,AfCFTA GTI - verify tariff schedule,18,14,16,11,9,68,BrandLab / Core,Corporate brand decks + distributor,High
-15,B,Tunisia,Africa,45060.0,2024.0,Reported imports,Agadir / COMESA / AfCFTA GTI - verify best route,9,20,17,11,10,67,Tourism / Heritage,Tourism + preferential regional route,Medium
-16,B,Seychelles,Africa,20420.0,2024.0,Reported imports,COMESA - verify current preference,9,17,20,7,13,66,Tourism,High-value resort souvenir niche,High
-17,B,Ethiopia,Africa,1661046.0,2023.0,Reported imports,COMESA; preference implementation requires verification,24,17,13,8,4,66,Core,Large demand signal; FX/import friction,Medium
-18,B,Madagascar,Africa,297980.0,2024.0,Reported imports,COMESA - verify current preference,18,17,15,8,7,65,Tourism / Core,Tourism + distributor play,Medium
-19,B,Rwanda,Africa,,,Import total not verified,COMESA / AfCFTA GTI - verify applicable route,8,17,18,11,10,64,Hospitality / BrandLab,Premium hospitality + destination deck,High
-20,B,Nigeria,Africa,159260.0,2024.0,Reported imports,AfCFTA/standard route - verify,15,10,18,11,6,60,BrandLab / Core,Large B2B account universe + private label,High
-21,B,DR Congo,Africa,214080.0,2023.0,Reported imports,COMESA - verify current preference,18,17,12,7,5,59,Core,Mass-market distributor,Medium
-22,B,Cameroon,Africa,132570.0,2023.0,Reported imports,AfCFTA GTI - verify tariff schedule,15,14,14,9,7,59,Core / Private Label,Francophone distribution,Medium
-23,B,Namibia,Africa,112330.0,2024.0,Reported imports,AfCFTA/SA route - verify,15,10,13,10,11,59,Premium Core,Retail via Southern Africa ecosystem,Medium
-24,B,Angola,Africa,396980.0,2024.0,Reported imports,AfCFTA/standard route - verify,18,10,13,9,7,57,Core,Distributor + hospitality,Medium
-25,B,Libya,Africa,,,Import total not verified,COMESA / GAFTA - verify applicable preference,8,19,15,10,5,57,Core / Heritage,Arabic market + geographic proximity,Medium
-26,C,Côte d’Ivoire,Africa,74110.0,2024.0,Reported imports,AfCFTA/standard route - verify,12,10,15,10,8,55,Core / BrandLab,Francophone West Africa hub,Medium
-27,C,Senegal,Africa,54450.0,2024.0,Reported imports,AfCFTA/standard route - verify,12,10,15,9,9,55,Tourism / Core,Tourism + Francophone B2B,Medium
-28,C,Zambia,Africa,45850.0,2024.0,Reported imports,COMESA - verify current preference,9,17,12,9,8,55,Core,Wholesale + regional distribution,Medium
-29,C,Malawi,Africa,61470.0,2024.0,Reported imports,COMESA - verify current preference,12,17,11,7,7,54,Core,COMESA wholesale,Medium
-30,C,Djibouti,Africa,10657.0,2023.0,Reported imports,COMESA - verify current preference,6,17,11,12,8,54,Core,Logistics/trade-hub buyers,Medium
-31,C,Eswatini,Africa,,,Import total not verified,COMESA - verify preference/derogations,8,17,11,8,9,53,Core,Southern Africa distributor route,Low
-32,C,Comoros,Africa,,,Import total not verified,COMESA - verify current preference,8,17,16,5,7,53,Tourism / Core,Tourism niche + COMESA,Medium
-33,C,Botswana,Africa,23708.0,2023.0,Reported imports,AfCFTA/SA route - verify,9,10,13,9,11,52,Premium Core,South Africa-linked premium retail,Medium
-34,C,Zimbabwe,Africa,24920.0,2024.0,Reported imports,COMESA - verify current preference,9,17,11,8,6,51,Core,Distributor test,Medium
-35,C,Cape Verde,Africa,13830.0,2024.0,Reported imports,AfCFTA/standard route - verify,6,10,17,7,11,51,Tourism,Tourism-specialist micro market,Medium
-36,C,Mozambique,Africa,41640.0,2024.0,Reported imports,AfCFTA/standard route - verify,9,10,14,9,7,49,Tourism / Core,Hotels + Lusophone distribution,Medium
-37,C,Benin,Africa,58600.0,2024.0,Reported imports,AfCFTA/standard route - verify,12,10,11,8,7,48,Core,Regional wholesaler,Medium
-38,C,Gambia,Africa,,,Import total not verified,AfCFTA/standard route - verify,8,10,14,7,8,47,Tourism / Core,Tourism niche + wholesale,Medium
-39,C,Lesotho,Africa,18680.0,2024.0,Reported imports,AfCFTA/SA route - verify,6,10,10,8,10,44,Core,South Africa-linked route,Low
-40,C,Burundi,Africa,,,Import total not verified,COMESA - verify current preference,8,17,9,5,5,44,Core,COMESA opportunity,Low
-41,D,Republic of Congo,Africa,,,Mirror trade indicates demand; importer total not verified,AfCFTA/standard route - verify,8,10,11,7,6,42,Core,Distributor/private-label test,Low
-42,D,Mauritania,Africa,64470.0,2024.0,Reported imports,GAFTA note: no tariff reduction per IDA; verify route,12,6,10,7,6,41,Core,Selective distributor only,Low
-43,D,Gabon,Africa,4713.0,2023.0,Reported imports,AfCFTA/standard route - verify,3,10,13,7,8,41,Premium Core,Premium micro-market,Low
-44,D,Guinea,Africa,,,Import total not verified,AfCFTA/standard route - verify,8,10,10,6,5,39,Core,Distributor only,Low
-45,D,Liberia,Africa,,,Import total not verified,AfCFTA/standard route - verify,8,10,10,6,5,39,Core,Controlled distributor pilot,Low
-46,D,Sierra Leone,Africa,,,Import total not verified,AfCFTA/standard route - verify,8,10,10,6,5,39,Core,Small controlled pilot,Low
-47,D,Burkina Faso,Africa,15400.0,2024.0,Reported imports,AfCFTA/standard route - verify,6,10,9,6,5,36,Core,Price-led wholesale,Low
-48,D,Togo,Africa,1920.0,2024.0,Reported imports,AfCFTA/standard route - verify,3,10,9,7,7,36,Core,Long-tail wholesale,Low
-49,D,Mali,Africa,,,Import total not verified,AfCFTA/standard route - verify,8,10,8,5,4,35,Core,Wholesale only,Low
-50,D,Niger,Africa,,,Import total not verified,AfCFTA/standard route - verify,8,10,8,5,4,35,Core,Price-led wholesale,Low
+Rank,Tier,Country,Region,HS950440 Import USD,Data Year,Data Status,Potential Trade Route,Demand /30,Trade /20,Fit /20,Logistics /15,Execution Readiness /15,Score /100,Product Focus,Country Positioning,Outreach Priority,Data Confidence,Recommended Wave
+1,A,United Arab Emirates,GCC,12259189.0,2023.0,Reported imports,GAFTA - verify RoO/COO,30,19,20,15,14,98,BrandLab / Tourism / Premium Core,GCC distribution hub + custom branded decks,Very High,Medium,Wave 1
+2,A,Saudi Arabia,GCC,7097270.0,2024.0,Reported imports,GAFTA - verify RoO/COO,30,19,19,14,14,96,Core / BrandLab / Ramadan,Arabic premium + corporate gifting + distributor volume,Very High,High,Wave 1
+3,A,Kuwait,GCC,2707530.0,2024.0,Reported imports,GAFTA - verify RoO/COO,27,19,18,12,14,90,BrandLab / Premium Core,Premium gifting + specialty retail,Very High,High,Wave 1
+4,A,Morocco,Africa,1260320.0,2024.0,Reported imports,Agadir / GAFTA - verify origin route,24,20,19,13,12,88,Tourism / Heritage / Core,Tourism + heritage + hotel/souvenir channels,High,High,Wave 1
+5,A,Qatar,GCC,1117380.0,2024.0,Reported imports,GAFTA - verify RoO/COO,24,19,19,11,15,88,BrandLab / Hospitality,Luxury corporate + hospitality,High,High,Wave 1
+6,A,South Africa,Africa,6395350.0,2024.0,Reported imports,AfCFTA - verify tariff schedule,30,10,19,15,12,86,Core / Private Label,Retail volume + Southern Africa hub,Very High,High,Wave 1
+7,A,Oman,GCC,621420.0,2024.0,Reported imports,GAFTA - verify RoO/COO,21,19,18,12,14,84,Tourism / Premium Core,Tourism + premium standard + gifting,High,High,Wave 2
+8,A,Kenya,Africa,542040.0,2024.0,Reported imports,COMESA / AfCFTA GTI - verify applicable route,21,17,18,14,10,80,Core / Tourism / Private Label,East Africa hub + wildlife/destination editions,High,High,Wave 2
+9,A,Bahrain,GCC,340850.0,2024.0,Reported imports,GAFTA - verify RoO/COO,18,19,18,10,14,79,Premium Core / BrandLab,Premium niche + hospitality,High,High,Wave 2
+10,A,Mauritius,Africa,239890.0,2024.0,Reported imports,COMESA / AfCFTA GTI - verify applicable route,18,17,20,10,12,77,Tourism / BrandLab,Resorts + tourism decks + premium gifts,High,High,Wave 2
+11,A,Tanzania,Africa,853980.0,2024.0,Reported imports,AfCFTA GTI - verify tariff schedule,21,14,17,11,9,72,Tourism / Core,Zanzibar tourism + wholesale distribution,High,High,Wave 2
+12,A,Uganda,Africa,989300.0,2024.0,Reported imports,COMESA - verify current preference,21,17,14,9,8,69,Core,Distributor-volume Bridge,High,High,Wave 2
+13,B,Algeria,Africa,532770.0,2024.0,Reported imports,AfCFTA GTI - verify tariff schedule,21,14,15,10,9,69,Core / Heritage,Arabic/French localization + distributor,High,High,Wave 2
+14,B,Ghana,Africa,231910.0,2024.0,Reported imports,AfCFTA GTI - verify tariff schedule,18,14,16,11,9,68,BrandLab / Core,Corporate brand decks + distributor,High,High,Wave 2
+15,B,Tunisia,Africa,45060.0,2024.0,Reported imports,Agadir / COMESA / AfCFTA GTI - verify best route,9,20,17,11,10,67,Tourism / Heritage,Tourism + preferential regional route,Medium,High,Discovery
+16,B,Seychelles,Africa,20420.0,2024.0,Reported imports,COMESA - verify current preference,9,17,20,7,13,66,Tourism,High-value resort souvenir niche,High,High,Discovery
+17,B,Ethiopia,Africa,1661046.0,2023.0,Reported imports,COMESA; preference implementation requires verification,24,17,13,8,4,66,Core,Large demand signal; FX/import friction,Medium,Medium,Discovery
+18,B,Madagascar,Africa,297980.0,2024.0,Reported imports,COMESA - verify current preference,18,17,15,8,7,65,Tourism / Core,Tourism + distributor play,Medium,High,Discovery
+19,B,Rwanda,Africa,,,Import total not verified,COMESA / AfCFTA GTI - verify applicable route,8,17,18,11,10,64,Hospitality / BrandLab,Premium hospitality + destination deck,High,Low,Discovery
+20,B,Nigeria,Africa,159260.0,2024.0,Reported imports,AfCFTA/standard route - verify,15,10,18,11,6,60,BrandLab / Core,Large B2B account universe + private label,High,High,Discovery
+21,B,DR Congo,Africa,214080.0,2023.0,Reported imports,COMESA - verify current preference,18,17,12,7,5,59,Core,Mass-market distributor,Medium,Medium,Discovery
+22,B,Cameroon,Africa,132570.0,2023.0,Reported imports,AfCFTA GTI - verify tariff schedule,15,14,14,9,7,59,Core / Private Label,Francophone distribution,Medium,Medium,Discovery
+23,B,Namibia,Africa,112330.0,2024.0,Reported imports,AfCFTA/SA route - verify,15,10,13,10,11,59,Premium Core,Retail via Southern Africa ecosystem,Medium,High,Discovery
+24,B,Angola,Africa,396980.0,2024.0,Reported imports,AfCFTA/standard route - verify,18,10,13,9,7,57,Core,Distributor + hospitality,Medium,High,Discovery
+25,B,Libya,Africa,,,Import total not verified,COMESA / GAFTA - verify applicable preference,8,19,15,10,5,57,Core / Heritage,Arabic market + geographic proximity,Medium,Low,Discovery
+26,C,Côte d’Ivoire,Africa,74110.0,2024.0,Reported imports,AfCFTA/standard route - verify,12,10,15,10,8,55,Core / BrandLab,Francophone West Africa hub,Medium,High,Discovery
+27,C,Senegal,Africa,54450.0,2024.0,Reported imports,AfCFTA/standard route - verify,12,10,15,9,9,55,Tourism / Core,Tourism + Francophone B2B,Medium,High,Discovery
+28,C,Zambia,Africa,45850.0,2024.0,Reported imports,COMESA - verify current preference,9,17,12,9,8,55,Core,Wholesale + regional distribution,Medium,High,Discovery
+29,C,Malawi,Africa,61470.0,2024.0,Reported imports,COMESA - verify current preference,12,17,11,7,7,54,Core,COMESA wholesale,Medium,High,Discovery
+30,C,Djibouti,Africa,10657.0,2023.0,Reported imports,COMESA - verify current preference,6,17,11,12,8,54,Core,Logistics/trade-hub buyers,Medium,Medium,Discovery
+31,C,Eswatini,Africa,,,Import total not verified,COMESA - verify preference/derogations,8,17,11,8,9,53,Core,Southern Africa distributor route,Low,Low,Discovery
+32,C,Comoros,Africa,,,Import total not verified,COMESA - verify current preference,8,17,16,5,7,53,Tourism / Core,Tourism niche + COMESA,Medium,Low,Discovery
+33,C,Botswana,Africa,23708.0,2023.0,Reported imports,AfCFTA/SA route - verify,9,10,13,9,11,52,Premium Core,South Africa-linked premium retail,Medium,Medium,Discovery
+34,C,Zimbabwe,Africa,24920.0,2024.0,Reported imports,COMESA - verify current preference,9,17,11,8,6,51,Core,Distributor test,Medium,High,Discovery
+35,C,Cape Verde,Africa,13830.0,2024.0,Reported imports,AfCFTA/standard route - verify,6,10,17,7,11,51,Tourism,Tourism-specialist micro market,Medium,High,Discovery
+36,C,Mozambique,Africa,41640.0,2024.0,Reported imports,AfCFTA/standard route - verify,9,10,14,9,7,49,Tourism / Core,Hotels + Lusophone distribution,Medium,High,Discovery
+37,C,Benin,Africa,58600.0,2024.0,Reported imports,AfCFTA/standard route - verify,12,10,11,8,7,48,Core,Regional wholesaler,Medium,High,Discovery
+38,C,Gambia,Africa,,,Import total not verified,AfCFTA/standard route - verify,8,10,14,7,8,47,Tourism / Core,Tourism niche + wholesale,Medium,Low,Discovery
+39,C,Lesotho,Africa,18680.0,2024.0,Reported imports,AfCFTA/SA route - verify,6,10,10,8,10,44,Core,South Africa-linked route,Low,High,Discovery
+40,C,Burundi,Africa,,,Import total not verified,COMESA - verify current preference,8,17,9,5,5,44,Core,COMESA opportunity,Low,Low,Discovery
+41,D,Republic of Congo,Africa,,,Mirror trade indicates demand; importer total not verified,AfCFTA/standard route - verify,8,10,11,7,6,42,Core,Distributor/private-label test,Low,Low,Discovery
+42,D,Mauritania,Africa,64470.0,2024.0,Reported imports,GAFTA note: no tariff reduction per IDA; verify route,12,6,10,7,6,41,Core,Selective distributor only,Low,High,Discovery
+43,D,Gabon,Africa,4713.0,2023.0,Reported imports,AfCFTA/standard route - verify,3,10,13,7,8,41,Premium Core,Premium micro-market,Low,Medium,Discovery
+44,D,Guinea,Africa,,,Import total not verified,AfCFTA/standard route - verify,8,10,10,6,5,39,Core,Distributor only,Low,Low,Discovery
+45,D,Liberia,Africa,,,Import total not verified,AfCFTA/standard route - verify,8,10,10,6,5,39,Core,Controlled distributor pilot,Low,Low,Discovery
+46,D,Sierra Leone,Africa,,,Import total not verified,AfCFTA/standard route - verify,8,10,10,6,5,39,Core,Small controlled pilot,Low,Low,Discovery
+47,D,Burkina Faso,Africa,15400.0,2024.0,Reported imports,AfCFTA/standard route - verify,6,10,9,6,5,36,Core,Price-led wholesale,Low,High,Discovery
+48,D,Togo,Africa,1920.0,2024.0,Reported imports,AfCFTA/standard route - verify,3,10,9,7,7,36,Core,Long-tail wholesale,Low,High,Discovery
+49,D,Mali,Africa,,,Import total not verified,AfCFTA/standard route - verify,8,10,8,5,4,35,Core,Wholesale only,Low,Low,Discovery
+50,D,Niger,Africa,,,Import total not verified,AfCFTA/standard route - verify,8,10,8,5,4,35,Core,Price-led wholesale,Low,Low,Discovery
