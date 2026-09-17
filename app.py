@@ -28,8 +28,7 @@ html, body, [data-testid="stAppViewContainer"]{background:#fbfdfb;color:#101410}
 .kpi .label{font-size:.82rem;color:#58675e}.kpi .value{font-size:1.46rem;font-weight:850;color:#0c1710;margin:.3rem 0}.kpi .note{font-size:.78rem;color:#6b786f;line-height:1.55}
 .panel{background:#fff;border:1px solid #dce7df;border-radius:16px;padding:18px 20px;margin:.55rem 0 1rem}.good{border-left:5px solid #61d881;background:#f3fff6}.warn{border-left:5px solid #e5b34f;background:#fffaf0}.risk{border-left:5px solid #db6a6a;background:#fff5f5}.info{border-left:5px solid #8fd9ff;background:#f4fbff}.titleline{font-weight:900;font-size:1.05rem;color:#0b1710;margin-bottom:.3rem}
 .barrow{display:grid;grid-template-columns:190px 1fr 60px;gap:10px;align-items:center;margin:8px 0}.track{height:11px;background:#edf2ee;border-radius:99px;overflow:hidden}.fill{height:11px;background:#a6f3b5;border-radius:99px}.rank{font-weight:850;color:#0b1710}
-.mono{direction:ltr;text-align:left;font-family:monospace;white-space:pre-wrap;background:#0c120e;color:#dfffea;border-radius:12px;padding:14px}
-.pill{display:inline-block;padding:4px 9px;border:1px solid #cfe5d4;background:#f6fff8;border-radius:999px;margin:2px;font-size:.78rem}.muted{color:#68756c;font-size:.84rem}
+.mono{direction:ltr;text-align:left;font-family:monospace;white-space:pre-wrap;background:#0c120e;color:#dfffea;border-radius:12px;padding:14px}.muted{color:#68756c;font-size:.84rem}
 div[data-testid="stDataFrame"]{border:1px solid #e0e8e2;border-radius:14px;overflow:hidden}
 </style>
 """,
@@ -75,18 +74,18 @@ def panel(title, body, kind="good", allow_html=False):
     )
 
 
-def bars(rows, limit=10):
+def bars(rows, score_field="Score /100", rank_field="Rank", limit=10):
     if not rows:
         return
-    top = sorted(rows, key=lambda r: num(r.get("Score /100")), reverse=True)[:limit]
+    top = sorted(rows, key=lambda r: num(r.get(score_field)), reverse=True)[:limit]
     html = []
     for r in top:
-        score = int(num(r.get("Score /100")))
+        score = int(num(r.get(score_field)))
         html.append(
             '<div class="barrow">'
-            f'<div><span class="rank">#{escape(str(r.get("Rank", "")))}</span> {escape(str(r.get("Country", "")))}</div>'
+            f'<div><span class="rank">#{escape(str(r.get(rank_field, "")))}</span> {escape(str(r.get("Country", "")))}</div>'
             f'<div class="track"><div class="fill" style="width:{max(0,min(score,100))}%"></div></div>'
-            f'<div>{score}/100</div></div>'
+            f'<div>{score}%</div></div>'
         )
     st.markdown("".join(html), unsafe_allow_html=True)
 
@@ -174,41 +173,11 @@ EMAILS = {
 }
 
 READINESS = {
-    "Product master data": [
-        "Final SKU names/codes approved",
-        "Country of origin consistent across labels/listings",
-        "Unit + master-carton dimensions/weights/CBM verified",
-        "Paper/coating/finish specification locked",
-        "Lead time and peak-season lead time verified",
-    ],
-    "Customs & origin": [
-        "Destination HS classification checked",
-        "Rules of Origin checked for priority routes",
-        "BOM / Egyptian value-added evidence prepared",
-        "Certificate of Origin route confirmed",
-        "Destination conformity/marking route checked",
-    ],
-    "Commercial": [
-        "EXW and FOB price matrices approved",
-        "CIF workflow and quote-validity policy approved",
-        "Trial / Standard / Strategic MOQ ladder approved",
-        "Sample policy and design/setup fees approved",
-        "Payment terms matrix approved by risk level",
-    ],
-    "Quality & shipment": [
-        "Golden Sample approved",
-        "Batch QC tolerances documented",
-        "Moisture-control requirement assessed by route",
-        "Packing list / invoice / COO document SOP ready",
-        "Insurance / freight / release gate defined",
-    ],
-    "Sales operations": [
-        "Golden 1000 account universe built",
-        "Contacts verified and buyer roles assigned",
-        "Country × segment × offer campaigns prepared",
-        "CRM stages / objection tags defined",
-        "Weekly KPI review cadence scheduled",
-    ],
+    "Product master data": ["Final SKU names/codes approved","Country of origin consistent across labels/listings","Unit + master-carton dimensions/weights/CBM verified","Paper/coating/finish specification locked","Lead time and peak-season lead time verified"],
+    "Customs & origin": ["Destination HS classification checked","Rules of Origin checked for priority routes","BOM / Egyptian value-added evidence prepared","Certificate of Origin route confirmed","Destination conformity/marking route checked"],
+    "Commercial": ["EXW and FOB price matrices approved","CIF workflow and quote-validity policy approved","Trial / Standard / Strategic MOQ ladder approved","Sample policy and design/setup fees approved","Payment terms matrix approved by risk level"],
+    "Quality & shipment": ["Golden Sample approved","Batch QC tolerances documented","Moisture-control requirement assessed by route","Packing list / invoice / COO document SOP ready","Insurance / freight / release gate defined"],
+    "Sales operations": ["Golden 1000 account universe built","Contacts verified and buyer roles assigned","Country × segment × offer campaigns prepared","CRM stages / objection tags defined","Weekly KPI review cadence scheduled"],
 }
 
 left, right = st.columns([1, 5])
@@ -217,7 +186,7 @@ with left:
         st.image(str(LOGO), use_container_width=True)
 with right:
     st.markdown(
-        '<div class="hero"><span class="tag">GCC + AFRICA</span><span class="tag">HS 950440</span><span class="tag">90-DAY GTM</span><span class="tag">DATA CONFIDENCE</span><h1>Cards Club Export Command Center</h1><p><b>From Concept to Deck.</b> Market intelligence, commercial economics, export risk control, buyer targeting and execution.</p></div>',
+        '<div class="hero"><span class="tag">GCC + AFRICA</span><span class="tag">HS 950440</span><span class="tag">TOP 50 IMPORTERS</span><span class="tag">90-DAY GTM</span><h1>Cards Club Export Command Center</h1><p><b>From Concept to Deck.</b> Market intelligence, importer targeting, commercial economics, export risk control and outbound execution.</p></div>',
         unsafe_allow_html=True,
     )
 
@@ -225,6 +194,7 @@ page = st.sidebar.radio(
     "Navigate",
     [
         "Executive Dashboard",
+        "Top 50 Importer Markets",
         "Market Intelligence",
         "SWOT & Positioning",
         "Products & Offers",
@@ -243,30 +213,81 @@ st.sidebar.caption("Research snapshot: Sep 2026. Re-validate tariffs, origin, co
 
 if page == "Executive Dashboard":
     countries = load_csv("countries.csv")
+    importers = load_csv("top50_importer_markets.csv")
     wave1 = [r for r in countries if r.get("Recommended Wave") == "Wave 1"]
     high_conf = [r for r in countries if r.get("Data Confidence") == "High"]
-    verified_2024 = [r for r in countries if str(r.get("Data Year", "")).startswith("2024")]
+    priority_a = [r for r in importers if r.get("Success Band") == "Priority A"]
     c = st.columns(5)
     items = [
         ("Priority markets", len(countries) or 50, "GCC + Africa intelligence universe"),
         ("Wave 1", len(wave1) or 6, "Immediate pilot markets"),
-        ("High-confidence markets", len(high_conf), "Evidence strength flag"),
-        ("2024 import observations", len(verified_2024), "Latest-year records in model"),
+        ("Priority-A importer markets", len(priority_a), "Highest current success index"),
+        ("High-confidence markets", len(high_conf), "Evidence-strength flag"),
         ("Core HS", "950440", "Playing cards"),
     ]
     for col, item in zip(c, items):
-        with col:
-            kpi(*item)
+        with col: kpi(*item)
     panel("Execution rule", "The 50 markets are an intelligence universe, not a simultaneous rollout. Wave 1 is the controlled commercial pilot; Wave 2 follows only after message, offer and buyer-quality validation.", "warn")
-    if countries:
-        st.markdown("### Top market-attractiveness scores")
-        bars(countries, 12)
-        cols = ["Rank","Tier","Country","Score /100","Data Confidence","Recommended Wave","Product Focus","Country Positioning"]
-        st.dataframe([{k:r.get(k) for k in cols} for r in countries[:12]], use_container_width=True, hide_index=True)
+    if importers:
+        st.markdown("### Export-success index — top importer markets")
+        bars(importers, "Export Success Index %", "Success Rank", 12)
+        cols = ["Success Rank","Country","Export Success Index %","Success Band","Importer Category","Email Campaign","Wave"]
+        st.dataframe([{k:r.get(k) for k in cols} for r in importers[:12]], use_container_width=True, hide_index=True)
     a, b, c = st.columns(3)
     with a: panel("Avoid the commodity trap", "Core opens doors; BrandLab, destination and heritage lines are the margin engine.")
     with b: panel("Use evidence quality", "A high score with low data confidence is a research lead, not a launch instruction.", "info")
     with c: panel("Build export proof", "Qualified buyer → RFQ → sample → pilot PO → reorder → case study.")
+
+elif page == "Top 50 Importer Markets":
+    rows = load_csv("top50_importer_markets.csv")
+    st.subheader("Top 50 importer markets — Cards Club")
+    panel("How to read the percentage", "Export Success Index % is an internal planning index, not a statistical probability or sales guarantee. It starts from the market-attractiveness score and is discounted by data-confidence quality.", "warn")
+    if not rows:
+        st.error("top50_importer_markets.csv is missing.")
+    else:
+        a,b,c,d = st.columns(4)
+        regions_all = sorted({r.get("Region","") for r in rows if r.get("Region")})
+        waves_all = ["Wave 1","Wave 2","Discovery"]
+        bands_all = ["Priority A","Priority B","Priority C","Test / Research"]
+        camps_all = sorted({r.get("Email Campaign","") for r in rows if r.get("Email Campaign")})
+        regions = a.multiselect("Region", regions_all, default=regions_all)
+        waves = b.multiselect("Wave", waves_all, default=waves_all)
+        bands = c.multiselect("Success band", bands_all, default=bands_all)
+        camps = d.multiselect("Email campaign", camps_all, default=camps_all)
+        q = st.text_input("Search country / importer type / buyer role / product focus").strip().lower()
+        view = [r for r in rows if r.get("Region") in regions and r.get("Wave") in waves and r.get("Success Band") in bands and r.get("Email Campaign") in camps]
+        if q:
+            view = [r for r in view if q in " ".join(str(v) for v in r.values()).lower()]
+        display_cols = ["Market Rank","Success Rank","Country","Region","HS950440 Import USD","Importer Category","Primary Buyer Roles","Language","Product Focus","Export Success Index %","Success Band","Data Confidence","Wave","Email Campaign","Email Subject","CTA"]
+        st.dataframe([{k:r.get(k) for k in display_cols} for r in view], use_container_width=True, hide_index=True)
+        st.download_button("Download Top 50 Importer Markets CSV", (DATA / "top50_importer_markets.csv").read_bytes(), file_name="CardsClub_Top50_Importer_Markets.csv", mime="text/csv", use_container_width=True)
+        options = [r["Country"] for r in view] or [r["Country"] for r in rows]
+        country = st.selectbox("Country campaign drill-down", options)
+        r = next(x for x in rows if x.get("Country") == country)
+        k1,k2,k3,k4,k5 = st.columns(5)
+        k1.metric("Market rank", r.get("Market Rank")); k2.metric("Success rank", r.get("Success Rank")); k3.metric("Import signal", money(r.get("HS950440 Import USD"))); k4.metric("Success index", f"{int(num(r.get('Export Success Index %')))}%"); k5.metric("Wave", r.get("Wave"))
+        panel("Importer category", r.get("Importer Category",""))
+        x,y = st.columns(2)
+        with x:
+            st.write("**Buyer roles:**", r.get("Primary Buyer Roles"))
+            st.write("**Recommended language:**", r.get("Language"))
+            st.write("**Product focus:**", r.get("Product Focus"))
+            st.write("**Data confidence:**", r.get("Data Confidence"))
+        with y:
+            st.write("**Campaign:**", r.get("Email Campaign"))
+            st.write("**Subject:**", r.get("Email Subject"))
+            st.write("**CTA:**", r.get("CTA"))
+            st.write("**Success band:**", r.get("Success Band"))
+        campaign = r.get("Email Campaign")
+        if campaign in EMAILS:
+            subject, preview, body = EMAILS[campaign]
+            body = body.replace("{{Country}}", country)
+            st.markdown("### Recommended email campaign")
+            aa,bb = st.columns(2)
+            with aa: panel("Subject", subject.replace("{{Country}}", country))
+            with bb: panel("Preview", preview)
+            st.markdown(f'<div class="mono">{escape(body)}</div>', unsafe_allow_html=True)
+            st.caption("Default cadence: Email 1 → proof/value follow-up on day 3–4 → final low-pressure follow-up on day 7–10. Personalize account context before sending.")
 
 elif page == "Market Intelligence":
     countries = load_csv("countries.csv")
@@ -296,23 +317,13 @@ elif page == "Market Intelligence":
         panel("Country positioning", r.get("Country Positioning", ""))
         x, y = st.columns(2)
         with x:
-            st.write("**Product focus:**", r.get("Product Focus"))
-            st.write("**Trade route:**", r.get("Potential Trade Route"))
-            st.write("**Outreach priority:**", r.get("Outreach Priority"))
-            st.write("**Data confidence:**", r.get("Data Confidence"))
-            st.write("**Data status:**", r.get("Data Status"))
+            st.write("**Product focus:**", r.get("Product Focus")); st.write("**Trade route:**", r.get("Potential Trade Route")); st.write("**Outreach priority:**", r.get("Outreach Priority")); st.write("**Data confidence:**", r.get("Data Confidence")); st.write("**Data status:**", r.get("Data Status"))
         with y:
-            for label, field, maxv in [
-                ("Demand", "Demand /30", 30),
-                ("Trade access", "Trade /20", 20),
-                ("Product fit", "Fit /20", 20),
-                ("Logistics", "Logistics /15", 15),
-                ("Execution readiness", "Execution Readiness /15", 15),
-            ]:
+            for label, field, maxv in [("Demand", "Demand /30", 30),("Trade access", "Trade /20", 20),("Product fit", "Fit /20", 20),("Logistics", "Logistics /15", 15),("Execution readiness", "Execution Readiness /15", 15)]:
                 val = num(r.get(field)); st.caption(f"{label}: {val:.0f}/{maxv}"); st.progress(min(max(val / maxv, 0), 1.0))
         if r.get("Data Confidence") == "Low":
-            panel("Research gate", "This market has low data confidence. Verify import demand, tariff treatment, buyer universe and payment conditions before allocating meaningful outbound volume.", "warn")
-        st.caption("Score = internal decision-support heuristic. It is not a sovereign-risk rating, a sales forecast or a guarantee of tariff preference.")
+            panel("Research gate", "Verify import demand, tariff treatment, buyer universe and payment conditions before allocating meaningful outbound volume.", "warn")
+        st.caption("Score = internal decision-support heuristic. It is not a sovereign-risk rating, sales forecast or guarantee of tariff preference.")
 
 elif page == "SWOT & Positioning":
     panel("Master positioning", "<b>Cards Club — a regional design-to-deck manufacturing partner for brands, distributors, retailers, hotels and destinations across the Middle East and Africa.</b>", allow_html=True)
@@ -379,20 +390,7 @@ elif page == "Commercial Calculator":
     distributor_sell = calc_margin_sell(landed_unit, distributor_margin)
     retail_sell = calc_margin_sell(distributor_sell, retailer_margin)
     c1, c2, c3, c4 = st.columns(4)
-    c1.metric("Goods value", f"${goods:,.2f}")
-    c2.metric("Estimated landed total", f"${landed_total:,.2f}")
-    c3.metric("Estimated landed / unit", f"${landed_unit:,.2f}")
-    c4.metric("Indicative retail / unit", f"${retail_sell:,.2f}")
-    st.dataframe([
-        {"Layer":"EXW goods","Total USD":round(goods,2),"Per unit USD":round(exw_unit,2)},
-        {"Layer":"Freight + insurance","Total USD":round(freight+insurance,2),"Per unit USD":round((freight+insurance)/qty,2)},
-        {"Layer":"Customs duty","Total USD":round(duty,2),"Per unit USD":round(duty/qty,2)},
-        {"Layer":"Import VAT/tax","Total USD":round(import_tax,2),"Per unit USD":round(import_tax/qty,2)},
-        {"Layer":"Fixed destination fees","Total USD":round(fixed_fees,2),"Per unit USD":round(fixed_fees/qty,2)},
-        {"Layer":"Landed cost","Total USD":round(landed_total,2),"Per unit USD":round(landed_unit,2)},
-        {"Layer":"Distributor sell-out target","Total USD":"—","Per unit USD":round(distributor_sell,2)},
-        {"Layer":"Indicative retail target","Total USD":"—","Per unit USD":round(retail_sell,2)},
-    ], use_container_width=True, hide_index=True)
+    c1.metric("Goods value", f"${goods:,.2f}"); c2.metric("Estimated landed total", f"${landed_total:,.2f}"); c3.metric("Estimated landed / unit", f"${landed_unit:,.2f}"); c4.metric("Indicative retail / unit", f"${retail_sell:,.2f}")
     st.caption("Margin calculation assumes gross margin on selling price, not markup on cost. Import VAT may be recoverable in some jurisdictions; this calculator does not treat recoverability as a fact.")
 
 elif page == "Export Readiness":
@@ -402,18 +400,12 @@ elif page == "Export Readiness":
     for category, items in READINESS.items():
         st.markdown(f"### {category}")
         for idx, item in enumerate(items):
-            if st.checkbox(item, key=f"ready-{category}-{idx}"):
-                completed += 1
+            if st.checkbox(item, key=f"ready-{category}-{idx}"): completed += 1
     pct = completed / total_items if total_items else 0
-    st.progress(pct)
-    st.metric("Readiness completion", f"{completed}/{total_items} · {pct*100:.0f}%")
-    if pct < .6:
-        panel("Status", "Do not scale outbound yet. Close master-data, origin, pricing, payment and QC gaps first.", "risk")
-    elif pct < .85:
-        panel("Status", "Pilot outreach is possible, but shipment commitments should remain gated by unresolved compliance/quality controls.", "warn")
-    else:
-        panel("Status", "Operational readiness is strong enough for controlled scaling, subject to country-specific customs and buyer due diligence.", "good")
-    st.caption("This checklist is session-based and does not replace signed operating records or document-control systems.")
+    st.progress(pct); st.metric("Readiness completion", f"{completed}/{total_items} · {pct*100:.0f}%")
+    if pct < .6: panel("Status", "Do not scale outbound yet. Close master-data, origin, pricing, payment and QC gaps first.", "risk")
+    elif pct < .85: panel("Status", "Pilot outreach is possible, but shipment commitments should remain gated by unresolved compliance/quality controls.", "warn")
+    else: panel("Status", "Operational readiness is strong enough for controlled scaling, subject to country-specific customs and buyer due diligence.", "good")
 
 elif page == "90-Day Roadmap":
     roadmap = load_csv("roadmap.csv")
@@ -422,9 +414,7 @@ elif page == "90-Day Roadmap":
     for r in roadmap:
         with st.expander(f"Phase {r.get('Phase')} · {r.get('Timing')} · {r.get('Workstream')}"):
             st.write("**Actions:**", r.get("Actions")); st.write("**Deliverable:**", r.get("Deliverable")); st.write("**Success metric:**", r.get("Success Metric"))
-    panel("Gate 1", "No mass outbound before data, security and compliance cleanup.", "risk")
-    panel("Gate 2", "No final landed-price promise before origin, freight and destination-customs validation.", "warn")
-    panel("Gate 3", "No shipment before payment security, conformity and QC approval.", "risk")
+    panel("Gate 1", "No mass outbound before data, security and compliance cleanup.", "risk"); panel("Gate 2", "No final landed-price promise before origin, freight and destination-customs validation.", "warn"); panel("Gate 3", "No shipment before payment security, conformity and QC approval.", "risk")
 
 elif page == "Risk Register":
     risks = load_csv("risks.csv")
@@ -435,9 +425,7 @@ elif page == "Risk Register":
     st.dataframe(view, use_container_width=True, hide_index=True)
     counts = count_by(view, "Severity")
     cols = st.columns(4)
-    for col, level in zip(cols, order):
-        col.metric(level, counts.get(level,0))
-    st.markdown("### Critical + high-risk controls")
+    for col, level in zip(cols, order): col.metric(level, counts.get(level,0))
     for r in risks:
         if r.get("Severity") in ["Critical", "High"]:
             with st.expander(f"{r.get('ID')} · {r.get('Risk')} — {r.get('Severity')}"):
@@ -449,9 +437,8 @@ elif page == "Customs & Trade":
     st.dataframe(trade, use_container_width=True, hide_index=True)
     panel("Mirror-data warning", "Trade databases can show exporter-side and importer-side differences. Use them as market evidence, not as audited Cards Club sales or exact company market share.", "warn")
     st.markdown("### Pre-shipment gate")
-    checks = ["Confirm destination HS classification", "Confirm applicable agreement + Rules of Origin", "Confirm label / marking / conformity route", "Approve commercial invoice + packing list + COO route", "Confirm payment security + Incoterm", "Approve Golden Sample / batch QC", "Validate freight, insurance, transit time and quote validity"]
-    for i, text in enumerate(checks, 1):
-        st.checkbox(f"{i}. {text}", key=f"gate-{i}")
+    checks = ["Confirm destination HS classification","Confirm applicable agreement + Rules of Origin","Confirm label / marking / conformity route","Approve commercial invoice + packing list + COO route","Confirm payment security + Incoterm","Approve Golden Sample / batch QC","Validate freight, insurance, transit time and quote validity"]
+    for i, text in enumerate(checks, 1): st.checkbox(f"{i}. {text}", key=f"gate-{i}")
 
 elif page == "Email Campaigns":
     st.subheader("7 outbound campaign angles")
@@ -480,7 +467,7 @@ elif page == "Files & Sources":
     st.subheader("Runtime files & source index")
     panel("Deployment architecture", "The dashboard uses small sanitized CSV files for fast startup. The original raw workbook is intentionally not published because it contains sensitive operational / credential / banking-related information.", "warn")
     st.markdown("### Download sanitized runtime data")
-    names = ["countries.csv", "products.csv", "risks.csv", "roadmap.csv", "golden1000.csv", "trade.csv", "sources.csv"]
+    names = ["countries.csv", "top50_importer_markets.csv", "products.csv", "risks.csv", "roadmap.csv", "golden1000.csv", "trade.csv", "sources.csv"]
     cols = st.columns(3)
     for i, name in enumerate(names):
         path = DATA / name
