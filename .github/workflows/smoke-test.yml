@@ -32,6 +32,10 @@ jobs:
                   'Rank','Tier','Country','Score /100','Execution Readiness /15',
                   'Outreach Priority','Data Confidence','Recommended Wave'
               },
+              'data/top50_importer_markets.csv': {
+                  'Market Rank','Success Rank','Country','Importer Category','Primary Buyer Roles',
+                  'Export Success Index %','Success Band','Wave','Email Campaign','Email Subject','CTA'
+              },
               'data/products.csv': {'Product / Line','Architecture','Strategic Role'},
               'data/risks.csv': {'ID','Risk','Severity','Mitigation'},
               'data/roadmap.csv': {'Phase','Timing','Workstream','Success Metric'},
@@ -40,6 +44,7 @@ jobs:
               'data/sources.csv': {'Source','Use','URL / File'},
           }
 
+          loaded = {}
           for name, cols in required.items():
               p = Path(name)
               assert p.exists(), f'Missing {name}'
@@ -47,9 +52,9 @@ jobs:
                   rows = list(csv.DictReader(f))
               assert rows, f'{name} is empty'
               assert cols.issubset(rows[0].keys()), f'{name} missing columns: {cols - set(rows[0].keys())}'
+              loaded[name] = rows
 
-          with Path('data/countries.csv').open(encoding='utf-8-sig', newline='') as f:
-              countries = list(csv.DictReader(f))
+          countries = loaded['data/countries.csv']
           assert len(countries) == 50, f'Expected 50 countries, found {len(countries)}'
           ranks = sorted(int(float(r['Rank'])) for r in countries)
           assert ranks == list(range(1, 51)), 'Country ranks must be 1..50 with no gaps'
@@ -59,12 +64,28 @@ jobs:
               assert r['Data Confidence'] in {'High','Medium','Low'}, f"Bad confidence flag: {r}"
               assert r['Recommended Wave'] in {'Wave 1','Wave 2','Discovery'}, f"Bad wave: {r}"
 
+          importer_rows = loaded['data/top50_importer_markets.csv']
+          assert len(importer_rows) == 50, f'Expected 50 importer-market rows, found {len(importer_rows)}'
+          assert len({r['Country'] for r in importer_rows}) == 50, 'Importer-market countries must be unique'
+          allowed_bands = {'Priority A','Priority B','Priority C','Test / Research'}
+          allowed_campaigns = {
+              'Distributor Acquisition','Regional Supplier Alternative','Corporate BrandLab',
+              'Hotels & Resorts','Tourism / Souvenir','Seasonal / Ramadan','Breakup / Re-engagement'
+          }
+          for r in importer_rows:
+              idx = float(r['Export Success Index %'])
+              assert 0 <= idx <= 100, f"Bad success index for {r['Country']}: {idx}"
+              assert r['Success Band'] in allowed_bands, f"Bad success band: {r}"
+              assert r['Email Campaign'] in allowed_campaigns, f"Bad campaign: {r}"
+              assert r['Wave'] in {'Wave 1','Wave 2','Discovery'}, f"Bad importer wave: {r}"
+
           for p in [
               Path('study/MASTER_EXPORT_STUDY.md'),
+              Path('study/TOP_50_IMPORTER_MARKETS.md'),
               Path('study/EXPORT_READINESS_CHECKLIST.md'),
               Path('study/OUTBOUND_EMAIL_PLAYBOOK.md'),
           ]:
               assert p.exists() and p.stat().st_size > 500, f'Missing/empty study file: {p}'
 
-          print('Cards Club dashboard + study validation passed.')
+          print('Cards Club dashboard + importer-market validation passed.')
           PY
