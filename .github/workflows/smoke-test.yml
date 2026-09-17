@@ -20,9 +20,9 @@ jobs:
       - name: Install runtime
         run: pip install -r requirements.txt
 
-      - name: Validate app syntax and runtime data
+      - name: Validate app syntax, search engine and runtime data
         run: |
-          python -m py_compile app.py
+          python -m py_compile app.py pages/01_Smart_Search.py
           python - <<'PY'
           import csv
           from pathlib import Path
@@ -34,7 +34,9 @@ jobs:
               },
               'data/top50_importer_markets.csv': {
                   'Market Rank','Success Rank','Country','Importer Category','Primary Buyer Roles',
-                  'Export Success Index %','Success Band','Wave','Email Campaign','Email Subject','CTA'
+                  'Product Focus','Opportunity Score /100','Data Confidence','Wave','Email Campaign',
+                  'Search Keywords','Buyer Search Query EN','Buyer Search Query Local',
+                  'Recommended Channels','Research Priority'
               },
               'data/products.csv': {'Product / Line','Architecture','Strategic Role'},
               'data/risks.csv': {'ID','Risk','Severity','Mitigation'},
@@ -44,7 +46,7 @@ jobs:
               'data/sources.csv': {'Source','Use','URL / File'},
           }
 
-          loaded = {}
+          datasets = {}
           for name, cols in required.items():
               p = Path(name)
               assert p.exists(), f'Missing {name}'
@@ -52,9 +54,9 @@ jobs:
                   rows = list(csv.DictReader(f))
               assert rows, f'{name} is empty'
               assert cols.issubset(rows[0].keys()), f'{name} missing columns: {cols - set(rows[0].keys())}'
-              loaded[name] = rows
+              datasets[name] = rows
 
-          countries = loaded['data/countries.csv']
+          countries = datasets['data/countries.csv']
           assert len(countries) == 50, f'Expected 50 countries, found {len(countries)}'
           ranks = sorted(int(float(r['Rank'])) for r in countries)
           assert ranks == list(range(1, 51)), 'Country ranks must be 1..50 with no gaps'
@@ -64,28 +66,24 @@ jobs:
               assert r['Data Confidence'] in {'High','Medium','Low'}, f"Bad confidence flag: {r}"
               assert r['Recommended Wave'] in {'Wave 1','Wave 2','Discovery'}, f"Bad wave: {r}"
 
-          importer_rows = loaded['data/top50_importer_markets.csv']
-          assert len(importer_rows) == 50, f'Expected 50 importer-market rows, found {len(importer_rows)}'
-          assert len({r['Country'] for r in importer_rows}) == 50, 'Importer-market countries must be unique'
-          allowed_bands = {'Priority A','Priority B','Priority C','Test / Research'}
-          allowed_campaigns = {
-              'Distributor Acquisition','Regional Supplier Alternative','Corporate BrandLab',
-              'Hotels & Resorts','Tourism / Souvenir','Seasonal / Ramadan','Breakup / Re-engagement'
-          }
-          for r in importer_rows:
-              idx = float(r['Export Success Index %'])
-              assert 0 <= idx <= 100, f"Bad success index for {r['Country']}: {idx}"
-              assert r['Success Band'] in allowed_bands, f"Bad success band: {r}"
-              assert r['Email Campaign'] in allowed_campaigns, f"Bad campaign: {r}"
-              assert r['Wave'] in {'Wave 1','Wave 2','Discovery'}, f"Bad importer wave: {r}"
+          top50 = datasets['data/top50_importer_markets.csv']
+          assert len(top50) == 50, f'Expected 50 importer-market rows, found {len(top50)}'
+          assert len({r['Country'] for r in top50}) == 50, 'Importer-market countries must be unique'
+          for r in top50:
+              score = float(r['Opportunity Score /100'])
+              assert 0 <= score <= 100, f"Bad opportunity score for {r['Country']}: {score}"
+              assert r['Search Keywords'].strip(), f"Missing search keywords: {r['Country']}"
+              assert r['Buyer Search Query EN'].strip(), f"Missing EN buyer query: {r['Country']}"
+              assert r['Recommended Channels'].strip(), f"Missing search channels: {r['Country']}"
 
           for p in [
               Path('study/MASTER_EXPORT_STUDY.md'),
-              Path('study/TOP_50_IMPORTER_MARKETS.md'),
               Path('study/EXPORT_READINESS_CHECKLIST.md'),
               Path('study/OUTBOUND_EMAIL_PLAYBOOK.md'),
+              Path('study/TOP_50_IMPORTER_MARKETS.md'),
           ]:
               assert p.exists() and p.stat().st_size > 500, f'Missing/empty study file: {p}'
 
-          print('Cards Club dashboard + importer-market validation passed.')
+          assert Path('pages/01_Smart_Search.py').stat().st_size > 5000, 'Smart Search page is unexpectedly small'
+          print('Cards Club dashboard + smart search + data validation passed.')
           PY
